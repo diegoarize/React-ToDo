@@ -38,10 +38,10 @@ export var todosReducer = (state = [], action) => {
         }
       });
     case 'ADD_TODOS':
-    return [
-      ...state,
-      ...action.todos
-    ] ;
+      return [
+        ...state,
+        ...action.todos
+      ];
     default:
       return state;
   }
@@ -54,7 +54,7 @@ export var authReducer = (state = {}, action) => {
         uid: action.uid
       };
     case 'LOGOUT':
-    return {};
+      return {};
     default:
       return state;
   }
