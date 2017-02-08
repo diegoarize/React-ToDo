@@ -9,13 +9,17 @@ import TodoSearch from 'TodoSearch'
 
 
 
-export var TodoApp = React.createClass({
+export class TodoApp extends React.Component{
+  constructor (props) {
+    super(props);
+    this.onLogout = this.onLogout.bind(this);
+  }
   onLogout(e) {
     var {dispatch} = this.props;
     e.preventDefault();
 
     dispatch(actions.startLogout());
-  },
+  }
   render() {
     return (
       <div>
@@ -36,6 +40,6 @@ export var TodoApp = React.createClass({
       </div>
     )
   }
-});
+}
 
 export default Redux.connect()(TodoApp);
